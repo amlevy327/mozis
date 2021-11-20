@@ -57,12 +57,12 @@ contract Token is ERC1155, Ownable, ERC2981Collection {
         address _artist,
         string memory _uriString,
         address _royaltyAddress,
-        uint256 _royaltyPercentage // 10000 = 100, 1000 = 10, 100 = 1
+        uint256 _royaltyPercent // 10000 = 100, 1000 = 10, 100 = 1
     ) ERC1155 (
         _uriString
     ) {
         // payments = payable(_payments); // TESTING - REMOVE LATER
-        _setRoyalties(_royaltyAddress, _royaltyPercentage);
+        _setRoyalties(_royaltyAddress, _royaltyPercent);
 
         // THIS WILL BE CUSTOMIZED TO NEEDS OF BRAND
         _mint(_artist, PENGUIN0, 1, "");
@@ -74,7 +74,7 @@ contract Token is ERC1155, Ownable, ERC2981Collection {
     function uri(uint256 _tokenId) public view virtual override returns (string memory) {
         return string(
             abi.encodePacked(
-                "https://bafybeib33zblvfqnc4t54yhx7uav2oxg3h5lypg6nvtvyhyvx6qgsqg2fe.ipfs.dweb.link/",
+                "www.me.com/",
                 Strings.toString(_tokenId),
                 ".json"
                 )
