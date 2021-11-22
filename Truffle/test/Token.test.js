@@ -79,6 +79,20 @@ contract('Token', ([owner, artist, buyer]) => {
       valueNFT2.toString().should.equal("1", 'NFT2 is correct')
     })
 
-    // emits transfer single event IERC1155
+    // test events
+  })
+
+  describe('royalties', () => {
+    it('tracks royalty info', async () => {
+      let salePrice = 100
+      let result = await token.royaltyInfo(1, salePrice)
+      let receiver = result.receiver
+      let royaltyAmount = result.royaltyAmount
+
+      receiver.toString().should.equal(ROYALTY_ADDRESS.toString(), 'royalty address is correct')
+      royaltyAmount.toString().should.equal((ROYALTY_PERCENT * salePrice / 10000).toString(), 'royalty amount is correct')
+    })
+
+    // test events
   })
 })
