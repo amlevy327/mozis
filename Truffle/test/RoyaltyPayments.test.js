@@ -42,8 +42,6 @@ contract('RoyaltyPayments', ([owner, mozis, artist, tester1]) => {
       shares1.toString().should.equal(shares[1].toString(), 'shares1 is correct')
       totalShares.toString().should.equal((shares[0] + shares[1]).toString(), 'total shares is correct')
     })
-
-    // test events
   })
 
   describe('royalty payments', () => {
@@ -66,7 +64,5 @@ contract('RoyaltyPayments', ([owner, mozis, artist, tester1]) => {
       totalReleased = await royaltyPayments.totalReleased({ from: tester1 })
       totalReleased.toString().should.equal('10', 'arter artist & mozis released, total released is correct')
     })
-    
-    // test events
   })
 })
