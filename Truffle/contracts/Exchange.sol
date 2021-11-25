@@ -56,23 +56,6 @@ contract Exchange is Ownable {
     }
 
     function purchaseListing(uint256 _listingId) public payable {
-      // get listing
-      // listing id existing
-      // msg.sender != listing.seller
-      // not cancelled
-      // not sold
-      // msg.value == price
-      // listing seller has enough value of token for transfer
-
-      // transfer NFT
-
-      // get royalty amount
-      // pay royalty
-
-      // update sales mapping
-      
-      // emit event
-
       Listing memory listing = listings[_listingId];
 
       require(listing.listingId == _listingId, 'listingId is not valid');
